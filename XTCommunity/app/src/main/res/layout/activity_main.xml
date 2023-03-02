@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#303030"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true">
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imgMainLogo"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="100dp"
+                app:srcCompat="@drawable/xt_icon" />
+
+            <ImageButton
+                android:id="@+id/btnMainDashboard"
+                android:layout_width="300dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/imgMainLogo"
+                android:adjustViewBounds="true"
+                android:background="#303030"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/dashboard_button01" />
+
+            <ImageButton
+                android:id="@+id/btnMainLogin"
+                android:layout_width="300dp"
+                android:layout_height="80dp"
+                android:layout_below="@id/btnMainDashboard"
+                android:layout_centerHorizontal="true"
+                android:adjustViewBounds="true"
+                android:background="#303030"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/login_button01" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:paddingTop="3dp"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:background="#FD4A4A"
+                android:layout_alignParentBottom="true">
+                <RelativeLayout
+                    android:id="@+id/rltMainNoAccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="#3C3C3C">
+                    <TextView
+                        android:id="@+id/tvwMainNoAccount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/atomic_age"
+                        android:text="Do not have an account ?"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp" />
+
+                    <ImageButton
+                        android:id="@+id/btnMainSignUp"
+                        android:layout_width="300dp"
+                        android:layout_height="80dp"
+                        android:layout_centerInParent="true"
+                        android:adjustViewBounds="true"
+                        android:background="#FF3C3C3C"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/signup_button01" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

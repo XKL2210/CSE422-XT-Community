@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#303030"
+    tools:context=".DashboardActivity">
+
+    <ListView
+        android:id="@+id/lsvDashQuestions"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/rltDashList">
+
+    </ListView>
+
+    <RelativeLayout
+        android:id="@+id/rltDashList"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#4A51FD"
+        android:layout_marginBottom="70dp"
+        android:layout_alignParentBottom="true">
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/btnDashHome"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:layout_toLeftOf="@id/btnDashProfile"
+        android:layout_alignParentBottom="true"
+        android:adjustViewBounds="true"
+        android:background="#303030"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/icon_home" />
+
+    <ImageButton
+        android:id="@+id/btnDashSearch"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:layout_toRightOf="@id/btnDashProfile"
+        android:layout_alignParentBottom="true"
+        android:adjustViewBounds="true"
+        android:background="#303030"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/icon_search" />
+
+    <ImageButton
+        android:id="@+id/btnDashProfile"
+        android:layout_width="50dp"
+        android:layout_height="95dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:background="#303030"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/icon_profile" />
+</RelativeLayout>
