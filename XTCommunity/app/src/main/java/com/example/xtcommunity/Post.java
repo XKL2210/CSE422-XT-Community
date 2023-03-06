@@ -1,24 +1,25 @@
 package com.example.xtcommunity;
 
+import android.os.Build;
+
 import java.time.LocalDate;
 import java.util.UUID;
 
 public class Post {
     private String id;
     private String title;
-    private String numAnswers;
+    private int numAnswers;
     private User owner;
     private LocalDate date;
     private int upvotes;
     private int downvotes;
 
-    public Post(String title, String numAnswers, User owner, int upvotes, int downvotes) {
+    public Post(String title, int numAnswers, User owner, int upvotes, int downvotes) {
         this.title = title;
         this.numAnswers = numAnswers;
         this.owner = owner;
         this.upvotes = upvotes;
         this.downvotes = downvotes;
-        this.date = LocalDate.now();
         this.id = UUID.randomUUID().toString();
     }
 
@@ -30,11 +31,11 @@ public class Post {
         this.title = title;
     }
 
-    public String getNumAnswers() {
+    public int getNumAnswers() {
         return numAnswers;
     }
 
-    public void setNumAnswers(String numAnswers) {
+    public void setNumAnswers(int numAnswers) {
         this.numAnswers = numAnswers;
     }
 
@@ -60,5 +61,17 @@ public class Post {
 
     public void setDownvotes(int downvotes) {
         this.downvotes = downvotes;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 }
