@@ -73,6 +73,10 @@ public class SignUpActivity extends AppCompatActivity {
             gender = Gender.Female;
         }
 
+        if(!validate(username, password, name, email, mobile, birthday)) {
+            return;
+        }
+
         User user = new User(username, password);
         user.setEmail(email);
         user.setGender(gender);
