@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#303030"
+    tools:context=".SignUpActivity">
+    <TextView
+        android:id="@+id/tvwRegisterUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FD4A4A"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="@font/atomic_age"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="Username" />
+
+    <TextView
+        android:id="@+id/tvwRegisterPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FD4A4A"
+        android:layout_marginTop="115dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="18sp"
+        android:fontFamily="@font/atomic_age"
+        android:textStyle="bold"
+        android:text="Password" />
+
+    <TextView
+        android:id="@+id/tvwRegisterName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FD4A4A"
+        android:layout_marginTop="215dp"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="@font/atomic_age"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="Full Name" />
+
+    <TextView
+        android:id="@+id/tvwRegisterEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FD4A4A"
+        android:layout_marginTop="315dp"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="@font/atomic_age"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="Email" />
+
+    <TextView
+        android:id="@+id/tvwRegisterBirthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FD4A4A"
+        android:layout_marginTop="435dp"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="@font/atomic_age"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="Birthday" />
+
+    <TextView
+        android:id="@+id/tvwRegisterMobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FD4A4A"
+        android:layout_marginTop="535dp"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="@font/atomic_age"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="Mobile" />
+
+
+    <RelativeLayout
+        android:id="@+id/rltRegisterUsernameContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingBottom="5dp"
+        android:background="#FD4A4A">
+
+
+        <EditText
+            android:id="@+id/edtRegisterUsername"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="#303030"
+            android:ems="10"
+            android:fontFamily="@font/andika"
+            android:hint="Enter username"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rltRegisterPasswordContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingBottom="5dp"
+        android:background="#FD4A4A"
+        android:layout_below="@id/rltRegisterUsernameContainer">
+
+        <EditText
+            android:id="@+id/edtRegisterPassword"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="#303030"
+            android:ems="10"
+            android:fontFamily="@font/andika"
+            android:hint="Enter password"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rltRegisterNameContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingBottom="5dp"
+        android:background="#FD4A4A"
+        android:layout_below="@id/rltRegisterPasswordContainer">
+
+        <EditText
+            android:id="@+id/edtRegisterName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="#303030"
+            android:ems="10"
+            android:fontFamily="@font/andika"
+            android:hint="Enter your full name"
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rltRegisterEmailContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingBottom="5dp"
+        android:background="#FD4A4A"
+        android:layout_below="@id/rltRegisterNameContainer">
+
+        <EditText
+            android:id="@+id/edtRegisterEmail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="#303030"
+            android:ems="10"
+            android:fontFamily="@font/andika"
+            android:hint="Enter your email"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+    </RelativeLayout>
+
+    <RadioGroup
+        android:id="@+id/rdgRegisterGender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/rltRegisterEmailContainer">
+
+        <RadioButton
+            android:id="@+id/rdbRegisterMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:fontFamily="@font/atomic_age"
+            android:text="  Male"
+            android:textColor="#FD4A4A"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/rdbRegisterFemale"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/atomic_age"
+            android:textColor="#FD4A4A"
+            android:textSize="18sp"
+            android:text="  Female" />
+    </RadioGroup>
+
+    <RelativeLayout
+        android:id="@+id/rltRegisterBirthdayContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingBottom="5dp"
+        android:background="#FD4A4A"
+        android:layout_below="@id/rdgRegisterGender">
+
+        <EditText
+            android:id="@+id/edtRegisterBirthday"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="#303030"
+            android:ems="10"
+            android:fontFamily="@font/andika"
+            android:hint="Enter your birthday"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rltRegisterPhoneContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingBottom="5dp"
+        android:background="#FD4A4A"
+        android:layout_below="@id/rltRegisterBirthdayContainer">
+
+        <EditText
+            android:id="@+id/edtRegisterPhone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="#303030"
+            android:ems="10"
+            android:fontFamily="@font/andika"
+            android:hint="Enter your contact number"
+            android:inputType="phone"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imvRegister"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/rltRegisterPhoneContainer"
+        app:srcCompat="@drawable/signup_button01" />
+
+</RelativeLayout>

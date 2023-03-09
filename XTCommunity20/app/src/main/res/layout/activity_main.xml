@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#303030"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imvMainLogo"
+        android:layout_centerHorizontal="true"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="100dp"
+        app:srcCompat="@drawable/xt_icon" />
+
+    <ImageView
+        android:id="@+id/imvMainDashboard"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/imvMainLogo"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:background="#303030"
+        app:srcCompat="@drawable/dashboard_button01" />
+
+    <ImageView
+        android:id="@+id/imvMainLogin"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/imvMainDashboard"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:background="#303030"
+        app:srcCompat="@drawable/login_button01" />
+
+    <RelativeLayout
+        android:id="@+id/rltMainRegisterContainer01"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:paddingTop="3dp"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        android:background="#FD4A4A">
+
+        <RelativeLayout
+            android:id="@+id/rltMainRegisterContainer02"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#3C3C3C">
+
+            <ImageView
+                android:id="@+id/imvMainSignUp"
+                android:layout_width="300dp"
+                android:layout_height="80dp"
+                android:layout_centerInParent="true"
+                android:adjustViewBounds="true"
+                android:background="#3C3C3C"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/signup_button01" />
+
+            <TextView
+                android:id="@+id/tvwMainSignUpDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/atomic_age"
+                android:text="Do not have an account ?"
+                android:textSize="18sp"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

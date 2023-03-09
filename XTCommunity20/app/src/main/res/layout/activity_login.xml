@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#303030"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/imvMainLogo"
+        android:layout_centerHorizontal="true"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="100dp"
+        app:srcCompat="@drawable/xt_icon" />
+
+    <TextView
+        android:id="@+id/tvwLoginUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imvMainLogo"
+        android:textColor="#FD4A4A"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="@font/atomic_age"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="Username"  />
+
+    <TextView
+        android:id="@+id/tvwLoginPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imvMainLogo"
+        android:textColor="#FD4A4A"
+        android:layout_marginTop="105dp"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="@font/atomic_age"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="Password"  />
+
+    <RelativeLayout
+        android:id="@+id/rltLoginUsernameContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@id/imvMainLogo"
+        android:paddingBottom="5dp"
+        android:background="#FD4A4A">
+
+        <EditText
+            android:id="@+id/edtLoginUsername"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="#303030"
+            android:ems="10"
+            android:fontFamily="@font/andika"
+            android:hint="Enter username"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rltLoginPasswordContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@id/rltLoginUsernameContainer"
+        android:paddingBottom="5dp"
+        android:background="#FD4A4A">
+
+        <EditText
+            android:id="@+id/edtLoginPassword"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="#303030"
+            android:ems="10"
+            android:fontFamily="@font/andika"
+            android:hint="Enter password"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_below="@id/rltLoginPasswordContainer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/imvLogin"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        app:srcCompat="@drawable/login_button01" />
+</RelativeLayout>
