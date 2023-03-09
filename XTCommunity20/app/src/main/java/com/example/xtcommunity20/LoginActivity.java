@@ -22,6 +22,8 @@ public class LoginActivity extends AppCompatActivity {
     private EditText edtLoginUsername, edtLoginPassword;
     private Database mySQL;
 
+    private AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +74,8 @@ public class LoginActivity extends AppCompatActivity {
             loginDialog("Wrong username or password format", edtLoginUsername, edtLoginPassword);
             return false;
         }
+
+        return true;
     }
 
     private boolean checkValidate(String stringPattern, String check) {
