@@ -1,7 +1,9 @@
 package com.example.xtcommunity20;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -9,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 
 import java.util.UUID;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import database.Database;
 import model.Gender;
@@ -20,6 +24,10 @@ public class SignUpActivity extends AppCompatActivity {
             , edtRegisterEmail, edtRegisterBirthday, edtRegisterMobile;
     private RadioButton rdbRegisterMale, rdbRegisterFemale;
     private Database mySQL;
+
+    private AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,5 +83,65 @@ public class SignUpActivity extends AppCompatActivity {
         mySQL.uploadNewUserToDatabase(user);
 
         finish();
+    }
+
+    private boolean validate(String username, String password, String name, String email
+            , String mobile, String birthday) {
+        //check username & password
+        String userPasswordPattern =  "^[a-zA-Z0-9]+$";
+        if(!checkValidate(userPasswordPattern, username)||!checkValidate(userPasswordPattern, password)) {
+            registerDialog("Wrong username or password format", edtRegisterPassword);
+            return false;
+        }
+
+        //check name
+        String namePattern = "^[a-zA-Z\\s]+$";
+        if(!checkValidate(namePattern, name)) {
+            registerDialog("Wrong name format", edtRegisterName);
+            return false;
+        }
+
+        //check email
+        String mailPattern = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+        if(!checkValidate(mailPattern, email)) {
+            registerDialog("Wrong mail format", edtRegisterEmail);
+            return false;
+        }
+
+        //check mobile
+        String mobilePattern = "^\\+?[0-9]{10,13}$";
+        if(!checkValidate(mobilePattern, mobile)) {
+            registerDialog("Wrong phone number format", edtRegisterMobile);
+            return false;
+        }
+
+        //check birthday
+        if(Integer.parseInt(birthday)>2023&&Integer.parseInt(birthday)<1990) {
+            registerDialog("Wrong birthday", edtRegisterBirthday);
+            return false;
+        }
+
+        return true;
+    }
+
+    private boolean checkValidate(String stringPattern, String check) {
+        Pattern pattern = Pattern.compile((stringPattern));
+        Matcher matcher = pattern.matcher(check);
+        return matcher.matches();
+    }
+
+    private void registerDialog(String message, EditText edtText) {
+        builder.setTitle("ERROR")
+                .setMessage(message)
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        edtText.setText("");
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
