@@ -8,17 +8,18 @@ import android.view.View;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
-    ImageView imvMainDashboard, imvMainLogin, imvMainSignUp;
+    private ImageView imvMainDashboard, imvMainLogin, imvMainSignUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        constrainsGUI();
+        constrainGUI();
         actionListener();
     }
+
     //Initialization
-    private void constrainsGUI() {
+    private void constrainGUI() {
         imvMainDashboard = (ImageView) findViewById(R.id.imvMainDashboard);
         imvMainLogin = (ImageView) findViewById(R.id.imvMainLogin);
         imvMainSignUp = (ImageView) findViewById(R.id.imvMainSignUp);
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         imvMainDashboard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toDashboardActivity();
+                toDashboard();
             }
         });
 
@@ -46,13 +47,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     //Functional Methods
-    private void toDashboardActivity() {
+    private void toDashboard() {
         startActivity(new Intent(MainActivity.this, DashboardActivity.class));
     }
 
     private void toSignUp() {
-        startActivity(new Intent(MainActivity.this, SignUpActivity.class));
+        startActivity(new Intent(MainActivity.this, RegisterActivity.class));
     }
 
     private void toLogin() {

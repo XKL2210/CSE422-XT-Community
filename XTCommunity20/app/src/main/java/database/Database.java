@@ -24,11 +24,19 @@ public class Database {
         return posts;
     }
 
-    public void uploadNewUserToDatabase(User user) {
+    public String loginToDatabase(String username, String password) {
+        String successToken = "0000";
+        if(username.equals("Admin4444")
+                && password.equals("4444")) {
+            successToken = "4444";
+        }
 
+        return successToken;
     }
 
-    public boolean loginToDatabase(String username, String password) {
-        return false;
+    public String registerToDatabase(User user) {
+        String successToken;
+        successToken = "0000s";
+        return successToken;
     }
 }

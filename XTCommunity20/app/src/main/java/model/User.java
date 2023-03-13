@@ -12,7 +12,10 @@ public class User {
     private String email;
     private String phone;
 
-    public User(String username, String password) {
+    public User(String username, String password
+            , String fullName, Gender gender
+            ,String dateOfBirth, String email
+            ,String phone) {
         this.id = UUID.randomUUID().toString();
         this.username = username;
         this.password = password;
