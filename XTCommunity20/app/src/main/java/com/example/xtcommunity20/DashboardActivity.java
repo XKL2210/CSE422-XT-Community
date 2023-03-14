@@ -14,36 +14,44 @@ import database.Database;
 import model.Post;
 
 public class DashboardActivity extends AppCompatActivity {
-    ListView lsvDashboardPosts;
-    TextView tvwText;
-    String userID;
+    private ListView lsvDashboardPosts;
+    private String userID;
+    private List<Post> corePosts;
+    private Database database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-        Intent intent = getIntent();
-        userID = intent.getStringExtra("id");
-        constrainsGUI();
+        constrainGUI();
         actionListener();
-
-        List<Post> posts = new ArrayList<Post>();
-        Database database = new Database();
-        posts = database.getAllPost();
-        PostApdapter adapter = new PostApdapter(this, posts);
-        lsvDashboardPosts.setAdapter(adapter);
     }
 
     //Initialization
-    private void constrainsGUI() {
+    private void constrainGUI() {
         lsvDashboardPosts = (ListView) findViewById(R.id.lsvDashboardList);
-        tvwText = (TextView) findViewById(R.id.textViewTest);
+    }
 
-        tvwText.setText(userID);
+    private void objectsInitialization() {
+        corePosts = new ArrayList<Post>();
+        database = new Database();
     }
 
     private void actionListener() {
 
     }
     //Functional Methods
+    private void getCoreVariables() {
+        corePosts = database.getAllPost();
+    }
+
+    private void getPassingID() {
+        Intent intent = getIntent();
+        userID = intent.getStringExtra("id");
+    }
+
+    private void listViewSetUp() {
+        PostApdapter adapter = new PostApdapter(this, corePosts);
+        lsvDashboardPosts.setAdapter(adapter);
+    }
 }

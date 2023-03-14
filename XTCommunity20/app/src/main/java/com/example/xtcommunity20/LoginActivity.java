@@ -31,6 +31,9 @@ public class LoginActivity extends AppCompatActivity {
         edtLoginUsername = (EditText) findViewById(R.id.edtLoginUsername);
         edtLoginPassword = (EditText) findViewById(R.id.edtLoginPassword);
         imvLogin = (ImageView) findViewById(R.id.imvLogin);
+    }
+
+    private void objectsInitialization() {
         database = new Database();
     }
 

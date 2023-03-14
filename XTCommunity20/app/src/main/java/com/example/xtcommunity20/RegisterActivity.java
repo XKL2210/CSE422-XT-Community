@@ -45,6 +45,9 @@ public class RegisterActivity extends AppCompatActivity {
         rdbRegisterFemale = (RadioButton) findViewById(R.id.rdbRegisterFemale);
         rdbRegisterMale = (RadioButton) findViewById(R.id.rdbRegisterMale);
         imvRegister = (ImageView) findViewById(R.id.imvRegister);
+    }
+
+    private void objectsInitialization() {
         database = new Database();
     }
 
