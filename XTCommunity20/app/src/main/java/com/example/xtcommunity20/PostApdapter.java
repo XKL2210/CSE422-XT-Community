@@ -1,11 +1,14 @@
 package com.example.xtcommunity20;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -46,11 +49,21 @@ public class PostApdapter extends ArrayAdapter<Post> {
         TextView tvwQuestionUser = (TextView) rowView.findViewById(R.id.tvwQuestionItemUser);
         TextView tvwQuestionUpvote = (TextView) rowView.findViewById(R.id.tvwQuestionItemUpvote);
         TextView tvwQuestionDownvote = (TextView) rowView.findViewById(R.id.tvwQuestionItemDownvote);
+        RelativeLayout rltQuestionContainer02 = (RelativeLayout) rowView.findViewById(R.id.rltItemQuestionContainer02);
 
         tvwQuestionContext.setText(QuestionContext);
         tvwQuestionUser.setText(QuestionUser);
         tvwQuestionUpvote.setText(QuestionUpvotes);
         tvwQuestionDownvote.setText(QuestionDownvotes);
+
+        rltQuestionContainer02.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, SinglePostActivity.class);
+                intent.putExtra("postId", post.getOrigin());
+                context.startActivity(intent);
+            }
+        });
 
         return rowView;
     }

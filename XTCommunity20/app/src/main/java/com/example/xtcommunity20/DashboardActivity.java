@@ -3,6 +3,7 @@ package com.example.xtcommunity20;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -24,7 +25,7 @@ public class DashboardActivity extends AppCompatActivity {
     private ListView lsvDashboardPosts;
     private RelativeLayout rltDashboardProfile, rltDashboardSearch;
     private ImageView imvDashboardHome, imvDashboardUser
-            , imvDashboardSearch;
+            , imvDashboardSearch, imvDashboardCreate;
     private TextView tvwDashboardProfileName, tvwDashboardProfileGender
             , tvwDashboardProfileEmail, tvwDashboardProfileMobile;
     private String coreUsername, coreFullName
@@ -55,6 +56,7 @@ public class DashboardActivity extends AppCompatActivity {
         imvDashboardHome = (ImageView) findViewById(R.id.imvDashboardHome);
         imvDashboardUser = (ImageView) findViewById(R.id.imvDashboardUserProfile);
         imvDashboardSearch = (ImageView) findViewById(R.id.imvDashboardSearch);
+        imvDashboardCreate = (ImageView) findViewById(R.id.imvDashboardCreate);
         tvwDashboardProfileName = (TextView) findViewById(R.id.tvwDashboardProfileName);
         tvwDashboardProfileGender = (TextView) findViewById(R.id.tvwDashboardProfileGender);
         tvwDashboardProfileEmail = (TextView) findViewById(R.id.tvwDashboardProfileEmail);
@@ -93,6 +95,13 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 userOnClickAction();
+            }
+        });
+
+        imvDashboardCreate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                toNewPost();
             }
         });
     }
@@ -137,5 +146,11 @@ public class DashboardActivity extends AppCompatActivity {
         lsvDashboardPosts.setVisibility(View.GONE);
         rltDashboardProfile.setVisibility(View.GONE);
         rltDashboardSearch.setVisibility(View.VISIBLE);
+    }
+
+    private void toNewPost() {
+        Intent intent = new Intent(DashboardActivity.this, DashboardActivity.class);
+        intent.putExtra("userId", userID);
+        startActivity(intent);
     }
 }

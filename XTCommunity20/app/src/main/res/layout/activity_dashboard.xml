@@ -81,7 +81,7 @@
         <ImageView
             android:id="@+id/imvDashboardLogout"
             android:layout_width="290dp"
-            android:layout_height="70dp"
+            android:layout_height="50dp"
             android:layout_below="@id/imvDashboardRelated"
             android:layout_toRightOf="@id/imvDashboardCreate"
             app:srcCompat="@drawable/logout_button01" />
@@ -89,7 +89,7 @@
         <ImageView
             android:id="@+id/imvDashboardRelated"
             android:layout_width="300dp"
-            android:layout_height="80dp"
+            android:layout_height="50dp"
             android:layout_below="@id/rltDashboardLine05"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@id/imvDashboardCreate"
