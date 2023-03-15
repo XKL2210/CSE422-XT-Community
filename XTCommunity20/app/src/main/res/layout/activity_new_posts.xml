@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#303030"
+    tools:context=".NewPostsActivity">
+
+    <TextView
+        android:id="@+id/tvwNewPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/atomic_age"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="40sp"
+        android:layout_above="@id/rltNewPostContainer"
+        android:text="New Question" />
+
+    <RelativeLayout
+        android:id="@+id/rltNewPostContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_centerVertical="true"
+        android:paddingTop="1dp"
+        android:paddingBottom="5dp"
+        android:background="#FFEB3B">
+
+        <EditText
+            android:id="@+id/edtNewPost"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="#303030"
+            android:ems="10"
+            android:gravity="top"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:fontFamily="@font/andika"
+            android:hint="In put your Question" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imvPost"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/rltNewPostContainer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/icon_post" />
+</RelativeLayout>

@@ -11,19 +11,29 @@
         android:id="@+id/rltDashboardSearch"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/rltDashboardLine01">
+        android:layout_above="@id/rltDashboardLine01"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/imvDashboardSearchEntrance"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:layout_below="@id/rltSearchContainer"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/search_button01" />
 
         <TextView
             android:id="@+id/tvwDashboardSearch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_above="@id/rltSearchContainer"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="10dp"
             android:fontFamily="@font/atomic_age"
-            android:textSize="40sp"
+            android:text="Posts Lookup"
             android:textColor="@color/white"
-            android:text="Posts Lookup" />
+            android:textSize="40sp"
+            android:textStyle="bold" />
 
         <RelativeLayout
             android:id="@+id/rltSearchContainer"
@@ -32,8 +42,8 @@
             android:layout_centerInParent="true"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:paddingBottom="5dp"
-            android:background="#FD4A4A">
+            android:background="#FD4A4A"
+            android:paddingBottom="5dp">
 
             <EditText
                 android:id="@+id/edtDashboardSearch"

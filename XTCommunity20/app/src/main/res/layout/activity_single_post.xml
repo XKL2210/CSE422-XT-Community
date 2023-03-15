@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#303030"
+    tools:context=".SinglePostActivity">
+
+    <ImageView
+        android:id="@+id/imvSingleQuestionMarker"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        app:srcCompat="@drawable/question_mark" />
+
+    <TextView
+        android:id="@+id/tvwSingleTitle"
+        android:layout_toRightOf="@id/imvSingleQuestionMarker"
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/atomic_age"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="Question Title" />
+
+    <TextView
+        android:id="@+id/tvwSingleUser"
+        android:layout_toRightOf="@id/imvSingleQuestionMarker"
+        android:layout_below="@id/tvwSingleTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/atomic_age"
+        android:textColor="#FFFFFF"
+        android:text="0 Answers" />
+
+    <ImageView
+        android:id="@+id/imvSingleUpvote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/imvSingleQuestionMarker"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#303030"
+        app:srcCompat="@drawable/icon_upvote" />
+
+    <TextView
+        android:id="@+id/tvwSingleUpvote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imvSingleUpvote"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_below="@id/imvSingleQuestionMarker"
+        android:fontFamily="@font/atomic_age"
+        android:textColor="@color/white"
+        android:text="0 upvote(s)" />
+
+    <ImageView
+        android:id="@+id/imvSingleDownvote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/imvSingleQuestionMarker"
+        android:layout_toRightOf="@id/tvwSingleUpvote"
+        app:srcCompat="@drawable/icon_downvote" />
+
+    <TextView
+        android:id="@+id/tvwSinglemDownvote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imvSingleDownvote"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_below="@id/imvSingleQuestionMarker"
+        android:fontFamily="@font/atomic_age"
+        android:textColor="@color/white"
+        android:text="0 upvote(s)" />
+
+    <RelativeLayout
+        android:id="@+id/rltCommentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:padding="3dp"
+        android:layout_alignParentBottom="true"
+        android:background="#FFEB3B">
+
+        <EditText
+            android:id="@+id/edtSingleComment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:background="#303030"
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:fontFamily="@font/andika"
+            android:hint="   Comment..."/>
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lsvSingleComment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/rltCommentContainer"
+        android:layout_below="@id/imvSingleUpvote"/>
+</RelativeLayout>
