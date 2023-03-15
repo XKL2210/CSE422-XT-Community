@@ -15,7 +15,8 @@ import database.Database;
 public class LoginActivity extends AppCompatActivity {
     private EditText edtLoginUsername, edtLoginPassword;
     private ImageView imvLogin;
-    private String coreUsername, corePassword, coreID;
+    private String coreUsername, corePassword
+            , coreID;
     private Database database;
 
     @Override
@@ -23,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         constrainGUI();
+        objectsInitialization();
         actionListener();
     }
 

@@ -3,6 +3,7 @@ package database;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.Gender;
 import model.Post;
 import model.PostConnection;
 import model.PostType;
@@ -22,6 +23,18 @@ public class Database {
         posts.add(post01);
         posts.add(post02);
         return posts;
+    }
+
+    public User getUserById(String id) {
+        User currentUser = new User();
+        if(id.equalsIgnoreCase("4444")) {
+            User admin = new User("Admin4444", "4444"
+                    , "XKL", Gender.Male
+                    , "22/10/2000", "XKL2210@Gmail.com"
+                    , "0944716520");
+            currentUser = new User(admin);
+        }
+        return currentUser;
     }
 
     public String loginToDatabase(String username, String password) {

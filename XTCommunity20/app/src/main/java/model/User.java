@@ -19,12 +19,25 @@ public class User {
         this.id = UUID.randomUUID().toString();
         this.username = username;
         this.password = password;
-        this.fullName = "";
-        this.gender = null;
-        this.dateOfBirth= "";
-        this.email = "";
-        this.phone = "";
+        this.fullName = fullName;
+        this.gender = gender;
+        this.dateOfBirth= dateOfBirth;
+        this.email = email;
+        this.phone = phone;
     }
+
+    public User(User other) {
+        this.id = other.getId();
+        this.username = other.getUsername();
+        this.password = other.getPassword();
+        this.fullName = other.getFullName();
+        this.gender = other.getGender();
+        this.dateOfBirth= other.getDateOfBirth();
+        this.email = other.getEmail();
+        this.phone = other.getPhone();
+    }
+
+    public User() {}
 
     public String getId() {
         return id;
