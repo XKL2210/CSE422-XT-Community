@@ -14,7 +14,12 @@ public class Database {
     List<Post> posts;
     List<PostConnection> connection;
 
-    public List<Post> getAllPost() {
+    public boolean createNewPost(Post post) {
+        boolean successToken = true;
+        return successToken;
+    }
+
+    public List<Post> getAllPost(PostType type) {
         Post post01 = new Post("00", "001", PostType.Question
                 , "What is life ?", 4, 4);
         Post post02 = new Post("002", "002", PostType.Question
@@ -50,6 +55,46 @@ public class Database {
     public String registerToDatabase(User user) {
         String successToken;
         successToken = "0000s";
+        return successToken;
+    }
+
+    public List<Post> getPostByUser(String id) {
+        List<Post> posts = new ArrayList<>();
+        Post post01 = new Post("00", "001", PostType.Question
+                , "What is life ?", 4, 4);
+        posts.add(post01);
+        return posts;
+    }
+
+    public List<Post> getPostByContext(String context) {
+        List<Post> posts = new ArrayList<>();
+        Post post01 = new Post("00", "001", PostType.Question
+                , "What is life ?", 4, 4);
+        posts.add(post01);
+        return posts;
+    }
+
+    public List<Post> getPostByOrigin(String id) {
+        List<Post> posts = new ArrayList<>();
+        Post post01 = new Post("00", "001", PostType.Question
+                , "What is life ?", 4, 4);
+        posts.add(post01);
+        return posts;
+    }
+
+    public Post getPostById(String id) {
+        Post post01 = new Post("00", "001", PostType.Question
+                , "What is life ?", 4, 4);
+        return post01;
+    }
+
+    public boolean upvotePost(String id) {
+        boolean successToken = true;
+        return successToken;
+    }
+
+    public boolean downvotePost(String id) {
+        boolean successToken = true;
         return successToken;
     }
 }

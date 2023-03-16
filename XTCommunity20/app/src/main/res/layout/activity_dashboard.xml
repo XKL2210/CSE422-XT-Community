@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/rltDashboardLine01"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <ImageView
             android:id="@+id/imvDashboardSearchEntrance"
@@ -76,7 +76,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/rltDashboardLine01"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <ImageView
             android:id="@+id/imvDashboardLogout"

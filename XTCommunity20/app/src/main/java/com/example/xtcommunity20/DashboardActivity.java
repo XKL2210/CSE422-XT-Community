@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -19,19 +21,23 @@ import java.util.List;
 import database.Database;
 import model.Gender;
 import model.Post;
+import model.PostType;
 import model.User;
 
 public class DashboardActivity extends AppCompatActivity {
     private ListView lsvDashboardPosts;
     private RelativeLayout rltDashboardProfile, rltDashboardSearch;
     private ImageView imvDashboardHome, imvDashboardUser
-            , imvDashboardSearch, imvDashboardCreate;
+            , imvDashboardSearch, imvDashboardCreate
+            , imvDashboardRelated, imvDashboardLogout
+            , imvDashboardSearchEntrance;
     private TextView tvwDashboardProfileName, tvwDashboardProfileGender
             , tvwDashboardProfileEmail, tvwDashboardProfileMobile;
+    private EditText edtDashboardSearch;
     private String coreUsername, coreFullName
             , coreGender, coreDateOfBirth
             , coreEmail, coreMobile
-            , userID;
+            , userId, searchContext;
     private List<Post> corePosts;
     private Database database;
     private User currentUser;
@@ -57,15 +63,20 @@ public class DashboardActivity extends AppCompatActivity {
         imvDashboardUser = (ImageView) findViewById(R.id.imvDashboardUserProfile);
         imvDashboardSearch = (ImageView) findViewById(R.id.imvDashboardSearch);
         imvDashboardCreate = (ImageView) findViewById(R.id.imvDashboardCreate);
+        imvDashboardRelated = (ImageView) findViewById(R.id.imvDashboardRelated);
+        imvDashboardLogout = (ImageView) findViewById(R.id.imvDashboardLogout);
+        imvDashboardSearchEntrance = (ImageView) findViewById(R.id.imvDashboardSearchEntrance);
         tvwDashboardProfileName = (TextView) findViewById(R.id.tvwDashboardProfileName);
         tvwDashboardProfileGender = (TextView) findViewById(R.id.tvwDashboardProfileGender);
         tvwDashboardProfileEmail = (TextView) findViewById(R.id.tvwDashboardProfileEmail);
         tvwDashboardProfileMobile = (TextView) findViewById(R.id.tvwDashboardProfileMobile);
+        edtDashboardSearch = (EditText) findViewById(R.id.edtDashboardSearch);
     }
 
     private void setUpGUI() {
         homeOnClickAction();
-        listViewSetUp();
+        getCoreVariables();
+        listViewSetUp(corePosts);
         tvwDashboardProfileName.setText(coreUsername + " (" + coreFullName + ")");
         tvwDashboardProfileEmail.setText(coreEmail);
         tvwDashboardProfileGender.setText(coreGender + " " + coreDateOfBirth);
@@ -104,12 +115,33 @@ public class DashboardActivity extends AppCompatActivity {
                 toNewPost();
             }
         });
+
+        imvDashboardLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        imvDashboardRelated.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                relatedListview();
+            }
+        });
+
+        imvDashboardSearchEntrance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchListview();
+            }
+        });
     }
 
     //Functional Methods
     private void getCoreVariables() {
-        corePosts = database.getAllPost();
-        currentUser = database.getUserById(userID);
+        corePosts = database.getAllPost(PostType.Question);
+        currentUser = database.getUserById(userId);
         coreFullName = currentUser.getFullName();
         if(currentUser.getGender().equals(Gender.Female)) {
             coreGender = "Female";
@@ -122,12 +154,34 @@ public class DashboardActivity extends AppCompatActivity {
 
     private void getPassingID() {
         Intent intent = getIntent();
-        userID = intent.getStringExtra("id");
+        userId = intent.getStringExtra("userId");
     }
 
-    private void listViewSetUp() {
-        PostApdapter adapter = new PostApdapter(this, corePosts);
+    private void listViewSetUp(List<Post> posts) {
+        PostApdapter adapter = new PostApdapter(this, posts);
+        adapter.setUserId(userId);
         lsvDashboardPosts.setAdapter(adapter);
+    }
+
+    private void relatedListview() {
+        homeOnClickAction();
+        List<Post> relatedPosts = new ArrayList<>();
+        relatedPosts = database.getPostByUser(userId);
+        listViewSetUp(relatedPosts);
+    }
+
+    private void searchListview() {
+        homeOnClickAction();
+        searchContext = edtDashboardSearch.getText().toString().trim();
+        if(TextUtils.isEmpty(searchContext))
+        {
+            edtDashboardSearch.setError("Advise filling the form");
+            return;
+        }
+
+        List<Post> relatedPosts = new ArrayList<>();
+        relatedPosts = database.getPostByContext(searchContext);
+        listViewSetUp(relatedPosts);
     }
 
     private void homeOnClickAction() {
@@ -149,8 +203,16 @@ public class DashboardActivity extends AppCompatActivity {
     }
 
     private void toNewPost() {
-        Intent intent = new Intent(DashboardActivity.this, DashboardActivity.class);
-        intent.putExtra("userId", userID);
+        Intent intent = new Intent(DashboardActivity.this, NewPostsActivity.class);
+        intent.putExtra("userId", userId);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        objectsInitialization();
+        getCoreVariables();
+        listViewSetUp(corePosts);
     }
 }

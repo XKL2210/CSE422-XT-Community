@@ -91,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Admin Online", Toast.LENGTH_SHORT).show();
         }
         Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
-        intent.putExtra("id", coreID);
+        intent.putExtra("userId", coreID);
         startActivity(intent);
     }
 }
