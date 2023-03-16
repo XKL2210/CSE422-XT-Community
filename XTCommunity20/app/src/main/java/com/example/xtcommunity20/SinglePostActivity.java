@@ -130,6 +130,7 @@ public class SinglePostActivity extends AppCompatActivity {
                 , PostType.Answer, coreComment
                 , 0, 0);
 
+        edtSingleComment.setText("");
         database.createNewPost(temp);
         posts.add(temp);
         listViewSetUp(posts);
