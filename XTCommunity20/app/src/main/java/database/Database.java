@@ -78,13 +78,13 @@ public class Database {
     }
 
     public List<Post> getPostByContext(String context) {
-        List<Post> posts = new ArrayList<>();
+        List<Post> tempPosts = new ArrayList<>();
         for (Post post : posts) {
             if(post.getContext().contains(context)) {
-                posts.add(post);
+                tempPosts.add(post);
             }
         }
-        return posts;
+        return tempPosts;
     }
 
     public List<Post> getPostByOrigin(String id) {
