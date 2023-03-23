@@ -20,6 +20,8 @@ public class Post {
         this.upvotes = upvotes;
         this.downvotes = downvotes;
     }
+    public Post() {
+    }
 
     public boolean setConnection(UserAction action, User user) {
         boolean successToken = false;

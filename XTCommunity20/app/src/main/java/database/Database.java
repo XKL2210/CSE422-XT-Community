@@ -1,5 +1,6 @@
 package database;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,24 +11,34 @@ import model.PostType;
 import model.User;
 
 public class Database {
-    List<User> users;
-    List<Post> posts;
+    ArrayList<User> users;
+    ArrayList<Post> posts;
+    FileOperation fileOperation;
     List<PostConnection> connection;
 
+
     public boolean createNewPost(Post post) {
-        boolean successToken = true;
-        return successToken;
+        users = new ArrayList<>();
+        posts = new ArrayList<>();
+        return true;
+    }
+
+    public Database() {
+        users = new ArrayList<>();
+        posts = new ArrayList<>();
+        fileOperation = new FileOperation();
+        users = fileOperation.loadUsersFromFile();
+        posts = fileOperation.getAllData();
     }
 
     public List<Post> getAllPost(PostType type) {
-        Post post01 = new Post("00", "001", PostType.Question
-                , "What is life ?", 4, 4);
-        Post post02 = new Post("002", "002", PostType.Question
-                , "What is time ?", 4, 4);
-        posts = new ArrayList<>();
-        posts.add(post01);
-        posts.add(post02);
-        return posts;
+        ArrayList<Post> questions = new ArrayList<>();
+        for(Post post : posts) {
+            if(post.getType().equals(PostType.Question)){
+                questions.add(post);
+            }
+        }
+        return questions;
     }
 
     public User getUserById(String id) {
@@ -68,24 +79,33 @@ public class Database {
 
     public List<Post> getPostByContext(String context) {
         List<Post> posts = new ArrayList<>();
-        Post post01 = new Post("00", "001", PostType.Question
-                , "What is life ?", 4, 4);
-        posts.add(post01);
+        for (Post post : posts) {
+            if(post.getContext().equals(context)) {
+                posts.add(post);
+            }
+        }
         return posts;
     }
 
     public List<Post> getPostByOrigin(String id) {
-        List<Post> posts = new ArrayList<>();
-        Post post01 = new Post("00", "001", PostType.Question
-                , "What is life ?", 4, 4);
-        posts.add(post01);
-        return posts;
+        id = "001";
+        List<Post> answers = new ArrayList<>();
+        for (Post post : posts) {
+            if(post.getOrigin().equals(id)) {
+                answers.add(post);
+            }
+        }
+        return answers;
     }
 
     public Post getPostById(String id) {
-        Post post01 = new Post("00", "001", PostType.Question
-                , "What is life ?", 4, 4);
-        return post01;
+        Post tempPost = new Post();
+        for (Post post : posts) {
+            if(post.getId().equals(id)) {
+                tempPost = post;
+            }
+        }
+        return tempPost;
     }
 
     public boolean upvotePost(String id) {
