@@ -80,7 +80,7 @@ public class Database {
     public List<Post> getPostByContext(String context) {
         List<Post> posts = new ArrayList<>();
         for (Post post : posts) {
-            if(post.getContext().equals(context)) {
+            if(post.getContext().contains(context)) {
                 posts.add(post);
             }
         }
