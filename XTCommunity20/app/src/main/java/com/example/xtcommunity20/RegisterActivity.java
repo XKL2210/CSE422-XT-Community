@@ -17,7 +17,7 @@ import model.User;
 public class RegisterActivity extends AppCompatActivity {
     private EditText edtRegisterUsername, edtRegisterPassword
             , edtRegisterFullName, edtRegisterEmail
-            , edtRegisterBirthday, edtRegisterContactNumber;
+            , edtYearsExperience, edtRegisterContactNumber;
     private RadioButton rdbRegisterMale, rdbRegisterFemale;
     private ImageView imvRegister;
     private String coreUsername, corePassword
@@ -41,7 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
         edtRegisterFullName = (EditText) findViewById(R.id.edtRegisterName);
         edtRegisterEmail = (EditText) findViewById(R.id.edtRegisterEmail);
         edtRegisterContactNumber = (EditText) findViewById(R.id.edtRegisterPhone);
-        edtRegisterBirthday = (EditText) findViewById(R.id.edtRegisterBirthday);
+        edtYearsExperience = (EditText) findViewById(R.id.edtYearsExperience);
         rdbRegisterFemale = (RadioButton) findViewById(R.id.rdbRegisterFemale);
         rdbRegisterMale = (RadioButton) findViewById(R.id.rdbRegisterMale);
         imvRegister = (ImageView) findViewById(R.id.imvRegister);
@@ -67,7 +67,7 @@ public class RegisterActivity extends AppCompatActivity {
         coreFullName = edtRegisterEmail.getText().toString().trim();
         coreEmail = edtRegisterEmail.getText().toString().trim();
         coreContactNumber = edtRegisterContactNumber.getText().toString().trim();
-        coreBirthday = edtRegisterBirthday.getText().toString().trim();
+        coreBirthday = edtYearsExperience.getText().toString().trim();
         if(rdbRegisterFemale.isChecked()) {
             coreGender = Gender.Female;
         } else {
@@ -103,7 +103,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
         if(TextUtils.isEmpty(coreBirthday)) {
-            edtRegisterBirthday.setError("Invalid Input: Advise filling the form");
+            edtYearsExperience.setError("Invalid Input: Advise filling the form");
             checkToken = false;
         }
 

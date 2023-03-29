@@ -8,20 +8,20 @@ public class User {
     private String password;
     private String fullName;
     private Gender gender;
-    private String dateOfBirth;
+    private String yearOfExperience;
     private String email;
     private String phone;
 
     public User(String username, String password
             , String fullName, Gender gender
-            ,String dateOfBirth, String email
-            ,String phone) {
+            , String yearOfExperience, String email
+            , String phone) {
         this.id = UUID.randomUUID().toString();
         this.username = username;
         this.password = password;
         this.fullName = fullName;
         this.gender = gender;
-        this.dateOfBirth= dateOfBirth;
+        this.yearOfExperience = yearOfExperience;
         this.email = email;
         this.phone = phone;
     }
@@ -32,7 +32,7 @@ public class User {
         this.password = other.getPassword();
         this.fullName = other.getFullName();
         this.gender = other.getGender();
-        this.dateOfBirth= other.getDateOfBirth();
+        this.yearOfExperience = other.getYearOfExperience();
         this.email = other.getEmail();
         this.phone = other.getPhone();
     }
@@ -79,12 +79,12 @@ public class User {
         this.gender = gender;
     }
 
-    public String getDateOfBirth() {
-        return dateOfBirth;
+    public String getYearOfExperience() {
+        return yearOfExperience;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setYearOfExperience(String yearOfExperience) {
+        this.yearOfExperience = yearOfExperience;
     }
 
     public String getEmail() {

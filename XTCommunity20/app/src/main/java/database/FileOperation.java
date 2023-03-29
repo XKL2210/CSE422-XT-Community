@@ -6,7 +6,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 import model.Gender;
 import model.Post;
@@ -60,7 +59,7 @@ public class FileOperation {
                         + "," + user.getPassword()
                         + "," + user.getFullName()
                         + "," + user.getGender().toString()
-                        + "," + user.getDateOfBirth()
+                        + "," + user.getYearOfExperience()
                         + "," + user.getEmail()
                         + "," + user.getPhone());
                 writer.newLine();

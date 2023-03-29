@@ -3,7 +3,6 @@ package com.example.xtcommunity20;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -12,8 +11,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -147,7 +144,7 @@ public class DashboardActivity extends AppCompatActivity {
             coreGender = "Female";
         } else { coreGender = "Male"; }
         coreUsername = currentUser.getUsername();
-        coreDateOfBirth = currentUser.getDateOfBirth();
+        coreDateOfBirth = currentUser.getYearOfExperience();
         coreEmail = currentUser.getEmail();
         coreMobile = currentUser.getPhone();
     }

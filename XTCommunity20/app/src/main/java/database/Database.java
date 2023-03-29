@@ -65,7 +65,7 @@ public class Database {
 
     public String registerToDatabase(User user) {
         String successToken;
-        successToken = "0000s";
+        successToken = "0000";
         return successToken;
     }
 

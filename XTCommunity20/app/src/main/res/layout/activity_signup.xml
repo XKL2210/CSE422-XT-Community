@@ -56,7 +56,7 @@
         android:text="Email" />
 
     <TextView
-        android:id="@+id/tvwRegisterBirthday"
+        android:id="@+id/tvwYearsExperience"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#FD4A4A"
@@ -65,7 +65,7 @@
         android:fontFamily="@font/atomic_age"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:text="Birthday" />
+        android:text="Year of Experience" />
 
     <TextView
         android:id="@+id/tvwRegisterMobile"
@@ -222,14 +222,14 @@
         android:layout_below="@id/rdgRegisterGender">
 
         <EditText
-            android:id="@+id/edtRegisterBirthday"
+            android:id="@+id/edtYearsExperience"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
             android:background="#303030"
             android:ems="10"
             android:fontFamily="@font/andika"
-            android:hint="Birthday (dd,mm,yy)"
+            android:hint="Enter Years"
             android:inputType="text"
             android:textColor="@color/white"
             android:textColorHint="@color/white" />
